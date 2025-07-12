@@ -1,174 +1,344 @@
+
 # 🧠 Sentiment Analysis - Full Stack Application
+
+  
 
 A full-stack sentiment analysis web application that allows users to input text and receive a predicted sentiment (Positive or Negative) using a fine-tuned DistilBERT model.
 
+  
+
 ---
+
+  
+
+## 🌐 Live Demo
+
+  
+
+-  **Frontend:** [https://sentiment-analysis-ten-ruddy.vercel.app](https://sentiment-analysis-ten-ruddy.vercel.app)
+
+-  **Backend:** [https://sentiment-analysis-x8zw.onrender.com](https://sentiment-analysis-x8zw.onrender.com)
+
+  
+
+## 🔧 Environment Setup
+
+  
+
+Create the following `.env` files for frontend:
+
+  
+
+### `.env.production`
+
+VITE_API_BASE_URL=https://sentiment-analysis-x8zw.onrender.com
+
+  
+  
+  
+
+### `.env.development`
+
+VITE_API_BASE_URL=http://localhost:8000
+
+  
+  
+  
+
+Update your `api.ts` to use:
+
+```ts
+
+const  API_BASE_URL  =  import.meta.env.VITE_API_BASE_URL;
+```
+Make sure CORS is enabled in FastAPI like so:
+
+  
+  
+```
+allow_origins=[
+
+"http://localhost:5173",
+
+"https://sentiment-analysis-ten-ruddy.vercel.app"
+
+]
+
+  ```
+
+---
+
+  
 
 ## ✨ Features
 
+  
+
 - 🔍 Real-time Sentiment Prediction (Positive/Negative)
+
 - 🤖 Transformer-based model (DistilBERT from Hugging Face)
-- 🎨 Clean UI with a grey theme
+
+- 🎨 Clean UI  with a grey theme
+
 - 📦 FastAPI backend with Docker support
+
 - ⚛️ React frontend with TailwindCSS
+
 - ✅ Model fine-tuned on custom dataset
+
 - 🐳 Dockerized for easy deployment
 
+  
+
 ---
+
+  
 
 ## 🛠️ Tech Stack
 
-| Layer     | Technology                           |
+  
+
+| Layer | Technology |
+
 |-----------|--------------------------------------|
-| Frontend  | React, TypeScript, TailwindCSS       |
-| Backend   | Python, FastAPI, Transformers (HF)   |
-| ML Model  | DistilBERT (Fine-tuned via 🤗)        |
-| Docker    | Backend containerized                |
+
+| Frontend | React, TypeScript, TailwindCSS |
+
+| Backend | Python, FastAPI, Transformers (HF) |
+
+|  ML Model |  DistilBERT (Fine-tuned via 🤗) |
+
+| Docker | Backend containerized |
+
+  
 
 ---
+
+  
 
 ## 🚀 Quick Start
 
+  
+
 ### 🔧 Backend (FastAPI + PyTorch)
 
+  
+
 1. Navigate to the backend directory:
-   ```bash
-   cd backend
+
+``` bash
+
+cd backend
+```
 Create virtual environment:
 
-bash
-Copy
-Edit
+  
+  
+``` bash
 python3 -m venv venv
+
 source venv/bin/activate
+```
 Install dependencies:
 
-bash
-Copy
-Edit
+  
+  
+``` bash
 pip install -r requirements.txt
+```
 Start the backend:
 
-bash
-Copy
-Edit
+  
+  
+
 python3 main.py
-🌐 Frontend (React + TailwindCSS)
+
+### 🌐 Frontend (React + TailwindCSS)
+
 Navigate to frontend folder:
 
-bash
-Copy
-Edit
+  
+  
+``` bash
 cd frontend
+```
 Install dependencies:
 
-bash
-Copy
-Edit
+  
+  
+``` bash
 npm install
+```
 Run frontend:
 
-bash
-Copy
-Edit
+  
+  
+``` bash
 npm run dev
+```
 Open browser at: http://localhost:5173/
 
-🧪 Testing API
+  
+
+#### 🧪 Testing API
+
 You can test the backend independently using:
 
-bash
-Copy
-Edit
+  
+  
+``` bash
 curl -X POST "http://127.0.0.1:8000/predict" \
-     -H "Content-Type: application/json" \
-     -d '{"text": "I love this product"}'
+
+-H "Content-Type: application/json" \
+
+-d '{"text": "I love this product"}'
+```
 Response:
 
-json
-Copy
-Edit
+  
+  
+``` bash
 {"label": "positive", "score": 0.9999}
-🧠 Model
+```
+### 🧠 Model
+
 The backend/model/ folder contains the fine-tuned DistilBERT model artifacts:
+
+  
 
 model.safetensors
 
+  
+
 config.json
+
+  
 
 tokenizer.json
 
+  
+
 tokenizer_config.json
+
+  
 
 vocab.txt
 
+  
+
 📁 Project Structure
-arduino
-Copy
-Edit
+
+  
+  
+
 sentiment-analysis/
+
 ├── backend/
-│   ├── main.py
-│   ├── config.py
-│   ├── model/
-│   └── requirements.txt
+
+│ ├── main.py
+
+│ ├── config.py
+
+│ ├── model/
+
+│ └── requirements.txt
+
 ├── frontend/
-│   ├── src/
-│   ├── index.html
-│   └── tailwind.config.js
+
+│ ├── src/
+
+│ ├── index.html
+
+│ └── tailwind.config.js
+
 ├── data.jsonl
+
 ├── finetune.py
+
 └── README.md
-📦 Docker (Optional)
+
+### 📦 Docker (Optional)
+
 To run backend using Docker:
 
-bash
-Copy
-Edit
+
+  
+``` bash
 cd backend
+
 docker build -t sentiment-backend .
+
 docker run -p 8000:8000 sentiment-backend
-✅ Deployment (Optional)
+```
+### ✅ Deployment (Optional)
+
 If needed, frontend can be deployed to Vercel:
+
+  
 
 Connect your GitHub repo
 
+  
+
 Set:
+
+  
 
 Framework Preset: Vite
 
-Build Command: npm run build
+  
+
+Build Command: 
+``` bash
+npm run build
+```
+  
 
 Output Directory: dist
 
-🙌 Acknowledgements
+  
+
+### 🙌 Acknowledgements
+
 Transformers by Hugging Face
+
+  
 
 FastAPI
 
+  
+
 TailwindCSS
+
+  
 
 Docker
 
-📬 Contact
+  
+
+#### 📬 Contact
+
 Garvit Sharma
+
 📧 garvitsharma@example.com
+
 🔗 GitHub
 
+  
+
 📝 License
+
 This project is licensed under the MIT License.
 
-yaml
-Copy
-Edit
+  
+  
+  
 
 ---
 
-### ✅ Next Steps
+  
 
-- Copy the content above and save it in a file called `README.md` at the **root** of your project.
-- Run:
-  ```bash
-  git add README.md
-  git commit -m "Add project README"
-  git push
+
+
+  
+

@@ -21,6 +21,7 @@ const SentimentForm: React.FC<Props> = ({ onResult }) => {
       const result = await predictSentiment(text);
       onResult(result);
     } catch (err) {
+        console.error("Prediction failed:", error);
       setError('Failed to predict sentiment.');
     } finally {
       setLoading(false);

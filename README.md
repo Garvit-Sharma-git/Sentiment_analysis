@@ -15,10 +15,7 @@ A full-stack sentiment analysis web application that allows users to input text 
 
   
 
--  **Frontend:** [https://sentiment-analysis-ten-ruddy.vercel.app](https://sentiment-analysis-ten-ruddy.vercel.app)
-
--  **Backend:** [https://sentiment-analysis-x8zw.onrender.com](https://sentiment-analysis-x8zw.onrender.com)
-
+Loom Link- https://www.loom.com/share/ee8f9fa6e0e84c42904b1f4373561670?sid=35fdf5f2-20cc-4179-897e-c44b3999cdbb
   
 
 ## 🔧 Environment Setup

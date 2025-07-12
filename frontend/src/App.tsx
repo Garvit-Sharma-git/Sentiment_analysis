@@ -1,5 +1,6 @@
 // src/App.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
+
 import SentimentForm from './components/SentimentForm';
 import SentimentResult from './components/SentimentResult';
 import type { PredictionResult } from './types';

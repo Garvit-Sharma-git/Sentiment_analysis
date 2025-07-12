@@ -14,11 +14,15 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","https://your-frontend-url.vercel.app",],  # Frontend dev port or replace with prod
+    allow_origins=[
+        "http://localhost:5173",
+        "https://sentiment-analysis-ten-ruddy.vercel.app",  
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 class TextInput(BaseModel):
     text: str

@@ -1,0 +1,3 @@
+backend/venv/
+
+backend/model/model.safetensors
